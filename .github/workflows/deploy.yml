@@ -1,0 +1,28 @@
+name: Deploy MkDocs to GitHub Pages
+
+on:
+  push:
+    branches:
+      - master  # Changed from 'main' to match your current branch
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          
+      - name: Install MkDocs dependencies
+        run: pip install mkdocs mkdocs-material
+        
+      - name: Lint Markdown files
+        run: |
+          npm install -g markdownlint-cli
+          markdownlint "**/*.md"
+          
+      - name: Build and Deploy
+        run: mkdocs gh-deploy --force
