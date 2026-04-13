@@ -1,9 +1,17 @@
 plugins:
   - search
-  - mkdocstrings
-  - pdf-export
+  - mkdocstrings:
+      handlers:
+        python:
+          options:
+            docstring_style: sphinx
   - i18n:
-      default_language: ru
+      docs_structure: folder          # ← Обязательно для docs/ru/, docs/en/
       languages:
-        ru: Русский
-        en: English
+        - locale: ru
+          default: true               # ← Заменяет старый default_language
+          name: Русский
+          build: true
+        - locale: en
+          name: English
+          build: true
