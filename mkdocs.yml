@@ -24,6 +24,9 @@ extra:
       link: https://github.com/ED-techwriter
     - icon: fontawesome/brands/linkedin
       link: https://linkedin.com/in/ellina-danielian-ab54a8105/
+      
+extra_css:
+    - stylesheets/extra.css
 
 nav:
   - 🏠 Home / Главная: index.md
