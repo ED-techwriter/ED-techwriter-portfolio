@@ -25,7 +25,7 @@ extra:
       link: https://linkedin.com/in/ellina-danielian-ab54a8105/
       
 extra_css:
-    - stylesheets/extra.css
+  - /ED-techwriter-portfolio/stylesheets/extra.css
 
 nav:
   - 🏠 Home / Главная: index.md
